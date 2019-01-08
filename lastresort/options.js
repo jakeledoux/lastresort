@@ -22,9 +22,12 @@ function AddRow(name="", url="", color="#ff0000", idx=-1) {
   cell1.innerHTML = '<input type="text" value="' + name + '">';
   cell2.innerHTML = '<input type="url" value="' + url + '">';
   cell3.innerHTML = '<input type="color" value="' + color + '" style="width:25px;">';
-  cell4.innerHTML = '<button id="'+row.rowIndex+'">Remove</button>';
+  cell4.innerHTML = '<button>Remove</button>';
 
-  document.getElementById(row.rowIndex).addEventListener("click", function () { document.getElementById('optionsTable').deleteRow(this.id); });
+  row.children[3].addEventListener("click", function () 
+  { 
+    document.getElementById('optionsTable').deleteRow(this.parentElement.rowIndex);
+  });
 }
 
 // Collect rows into an array of dictionaries and write it to disk
@@ -59,7 +62,6 @@ function SaveOptions(tempOptions = []) {
 // Inject row HTML for each artist the user has saved in their options
 function ConstructRows() {
   try {
-    console.log(options);
     for (var i = 0; i < options.length; i++) {
       AddRow(options[i]["name"], options[i]["url"], options[i]["color"]);
     }
