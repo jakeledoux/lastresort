@@ -10,6 +10,10 @@ Created by [Jake Ledoux](https://jakeledoux.com). Contact: <dev@jakeledoux.com>
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7]
+### Changed
+- Browser action now disabled on domains other than Last.fm.
+
 ## [0.6]
 ### Added
 - Browser action to manually trigger the script. Just click the extension icon.
