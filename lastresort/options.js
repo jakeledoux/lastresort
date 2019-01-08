@@ -21,8 +21,8 @@ function AddRow(name="", url="", color="#ff0000", idx=-1) {
 
   cell1.innerHTML = '<input type="text" value="' + name + '">';
   cell2.innerHTML = '<input type="url" value="' + url + '">';
-  cell3.innerHTML = '<input type="color" value="' + color + '" style="width:25px;">';
-  cell4.innerHTML = '<button>Remove</button>';
+  cell3.innerHTML = '<input type="color" value="' + color + '">';
+  cell4.innerHTML = '<button>Remove Row</button>';
 
   row.children[3].addEventListener("click", function () 
   { 
