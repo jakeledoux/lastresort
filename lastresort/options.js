@@ -8,6 +8,30 @@
 var options;
 chrome.storage.sync.get("imgreplace", function (details) { options = details["imgreplace"]; ConstructRows();});
 
+function LoadCheck(name) {
+  chrome.storage.sync.get(name , function (details) { 
+    let tempbool = details[name];
+    if (typeof tempbool == 'undefined') {
+      tempbool = false; 
+    }
+
+    let checkbox = document.getElementsByName(name)[0];
+    checkbox.checked = tempbool;
+
+    checkbox.addEventListener("change", function() {
+      SaveCheck(name, this.checked);
+    })
+
+  });
+}
+
+function SaveCheck(SaveName, SaveState) {
+  console.log("saved!")
+  let tempOption = {}
+  tempOption[SaveName] = SaveState;
+  chrome.storage.sync.set(tempOption, function () { });
+}
+
 // idx isn't used yet, but it lets you specify where in the table you
 // want your row to be.
 function AddRow(name="", url="", color="#ff0000", idx=-1) {
@@ -99,3 +123,5 @@ document.getElementById("save-button").addEventListener("click", function() { Sa
 // Create "add row" button
 document.getElementById("add-row").addEventListener("click", function () { AddRow(); });
 document.getElementById("add-row").addEventListener("contextmenu", function () { LoadDeveloperOptions(); });
+// Init checkboxes
+LoadCheck("condense_padding");

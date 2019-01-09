@@ -2,6 +2,13 @@
 // dev@jakeledoux.com
 // fight me on github
 
+// Super handy redesign check
+var isRedesign = [
+    "album-overview-new",
+    "artist-overview-new",
+    "track-overview-new"
+].some(r => document.body.classList.contains(r));
+
 // Grab options and run the replace code for each artist
 var options;
 chrome.storage.sync.get("imgreplace", function (details) {
@@ -11,6 +18,23 @@ chrome.storage.sync.get("imgreplace", function (details) {
         Replace(options[i]["name"], options[i]["url"], options[i]["color"]);
     }
 });
+
+chrome.storage.sync.get("condense_padding", function(details) {
+    if (details.condense_padding) {
+        WriteCSS(".chartlist-row { padding: 5px; }");
+    }
+})
+
+function WriteCSS(css) {
+    let style = document.getElementsByTagName("style");
+    if (style.length == 0) {
+        style = document.getElementsByTagName("head")[0].appendChild(document.createElement("style"));
+    }
+    else {
+        style = style[0];
+    }
+    style.innerHTML += "\n"+css+"\n";
+}
 
 // Got this from a StackOverflow user. Thanks, "Tim Down"!
 function HexToRgb(hex) {
@@ -38,13 +62,6 @@ function Replace(artistName, imgURL, color)
     var artistElements = document.querySelectorAll("a[href='" + artistString + "']");
 
     let bodyClasses = document.body.classList;
-
-    // Super handy redesign check
-    var isRedesign = [
-        "album-overview-new",
-        "artist-overview-new",
-        "track-overview-new"
-    ].some(r => bodyClasses.contains(r));
     
     // Get page type
     var pageType;

@@ -5,6 +5,7 @@
   <title>Last Resort Options</title>
   <style>
     body {
+      color: #333;
       margin: 0;
       font-family: Open Sans, Lucida Grande, Helvetica Neue, Helvetica;
     }
@@ -35,6 +36,55 @@
     .content {
       margin-left: 20px;
       margin-right: 20px;
+    }
+    div.form-group {
+      height: 24px;
+      margin-top: 24px;
+      margin-bottom: 0px;
+      padding-top: 9px;
+    }
+    .form-group h3 {
+      float: left;
+      text-align: right;
+      width: 160px;
+      line-height: 24px;
+      font-weight: 700;
+      font-size: 14px;
+      display: block;
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .form-group input {
+      vertical-align: middle;
+    }
+    .form-group label {
+      padding-left: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      vertical-align: middle;
+    }
+    fieldset {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      min-width: 0;
+    }
+    legend {
+      font-weight: 700;
+      margin-bottom: -6px;
+      font-size: 18px;
+      line-height: 24px;
+      border: none;
+      color: #333;
+      font-size: 18px;
+    }
+    h1 {
+      color: #222;
+    }
+    h2 {
+      margin-top: 48px;
+      color: #222;
     }
     th {
       font-size: 14px;
@@ -116,6 +166,20 @@
 
     <button id="save-button" class="red">Save</button>
     <button id="add-row">Add row</button>
+
+    <h2 class="form-header">Other Improvements</h2>
+    
+    <fieldset>
+      <legend>Recent Tracks</legend>
+      <div class="form-group">
+        <h3>Condense padding</h3>
+        <label for="show_recent_tracks_arwork">
+          <input type="checkbox" name="condense_padding">
+          Make the recent tracklist pack more tightly on the redesign
+        </label>
+      </div>
+    </fieldset>
+
   </div>
 </body>
 <script src="options.js"></script>
