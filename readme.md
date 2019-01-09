@@ -26,9 +26,10 @@ Once we're at a point where the codebase is mostly stable then I'll look at port
 ## Can I help?
 
 Absolutely! Refer to the [contribution guide](https://github.com/jakeledoux/lastresort/blob/master/CONTRIBUTING.md) to get started.
-
+***
 
 # Changelog
+
 *Because lists!*
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
