@@ -8,6 +8,30 @@
 var options;
 chrome.storage.sync.get("imgreplace", function (details) { options = details["imgreplace"]; ConstructRows();});
 
+function LoadCheck(name) {
+  chrome.storage.sync.get(name , function (details) { 
+    let tempbool = details[name];
+    if (typeof tempbool == 'undefined') {
+      tempbool = false; 
+    }
+
+    let checkbox = document.getElementsByName(name)[0];
+    checkbox.checked = tempbool;
+
+    checkbox.addEventListener("change", function() {
+      SaveCheck(name, this.checked);
+    })
+
+  });
+}
+
+function SaveCheck(SaveName, SaveState) {
+  console.log("saved!")
+  let tempOption = {}
+  tempOption[SaveName] = SaveState;
+  chrome.storage.sync.set(tempOption, function () { });
+}
+
 // idx isn't used yet, but it lets you specify where in the table you
 // want your row to be.
 function AddRow(name="", url="", color="#ff0000", idx=-1) {
@@ -21,10 +45,13 @@ function AddRow(name="", url="", color="#ff0000", idx=-1) {
 
   cell1.innerHTML = '<input type="text" value="' + name + '">';
   cell2.innerHTML = '<input type="url" value="' + url + '">';
-  cell3.innerHTML = '<input type="color" value="' + color + '" style="width:25px;">';
-  cell4.innerHTML = '<button id="'+row.rowIndex+'">X</button>';
+  cell3.innerHTML = '<input type="color" value="' + color + '">';
+  cell4.innerHTML = '<button>Remove Row</button>';
 
-  document.getElementById(row.rowIndex).addEventListener("click", function () { document.getElementById('optionsTable').deleteRow(this.id); });
+  row.children[3].addEventListener("click", function () 
+  { 
+    document.getElementById('optionsTable').deleteRow(this.parentElement.rowIndex);
+  });
 }
 
 // Collect rows into an array of dictionaries and write it to disk
@@ -59,7 +86,6 @@ function SaveOptions(tempOptions = []) {
 // Inject row HTML for each artist the user has saved in their options
 function ConstructRows() {
   try {
-    console.log(options);
     for (var i = 0; i < options.length; i++) {
       AddRow(options[i]["name"], options[i]["url"], options[i]["color"]);
     }
@@ -97,3 +123,5 @@ document.getElementById("save-button").addEventListener("click", function() { Sa
 // Create "add row" button
 document.getElementById("add-row").addEventListener("click", function () { AddRow(); });
 document.getElementById("add-row").addEventListener("contextmenu", function () { LoadDeveloperOptions(); });
+// Init checkboxes
+LoadCheck("condense_padding");

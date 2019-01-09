@@ -3,19 +3,184 @@
 
 <head>
   <title>Last Resort Options</title>
+  <style>
+    body {
+      color: #333;
+      margin: 0;
+      font-family: Open Sans, Lucida Grande, Helvetica Neue, Helvetica;
+    }
+    .header {
+      background-color: black;
+      height: 60px;
+      width: 100%;
+      position: relative;
+    }
+    .masthead-logo {
+      height: 40px;
+      display: block;
+      margin: auto;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    .content-top-header {
+      font-weight: 700;
+      font-size: 30px;
+    }
+    .form-header {
+      font-weight: 400;
+      font-size: 26px;
+    }
+    .content {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    div.form-group {
+      height: 24px;
+      margin-top: 24px;
+      margin-bottom: 0px;
+      padding-top: 9px;
+    }
+    .form-group h3 {
+      float: left;
+      text-align: right;
+      width: 160px;
+      line-height: 24px;
+      font-weight: 700;
+      font-size: 14px;
+      display: block;
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .form-group input {
+      vertical-align: middle;
+    }
+    .form-group label {
+      padding-left: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      vertical-align: middle;
+    }
+    fieldset {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      min-width: 0;
+    }
+    legend {
+      font-weight: 700;
+      margin-bottom: -6px;
+      font-size: 18px;
+      line-height: 24px;
+      border: none;
+      color: #333;
+      font-size: 18px;
+    }
+    h1 {
+      color: #222;
+    }
+    h2 {
+      margin-top: 48px;
+      color: #222;
+    }
+    th {
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+    }
+    tr {
+      margin-top: 9px;
+    }
+    input[type="text"], input[type="url"] {
+      font-family: inherit;
+      border: 2px solid #eee;
+      display: block;
+      height: 24px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.71428571;
+      color: #222;
+      background-color: #fff;
+      background-image: none;
+    }
+    td {
+      padding-top: 10px;
+      height: 24px;
+      padding-right: 20px;
+    }
+    input[type="color"] {
+      height: 100%;
+      width: 100%;
+      border: none;
+      padding: 0;
+      width: 35px;
+    }
+    button {
+      font-family: inherit;
+      font-size: 14px;
+      color: #222;
+      display: inline-block;
+      padding: 9px 20px 10px;
+      border-radius: 1000000px;
+      border-width: 0px;
+      min-width: 100px;
+      
+      background-color: #eee;
+    }
+    button:hover {
+      background-color: #e3e3e3;
+      cursor: pointer;
+    }
+    .red {
+      margin-top: 20px;
+      margin-right: 10px;
+      background: #d92323;
+      color: #fff;
+    }
+    .red:hover {
+      background: #f71414;
+    }
+  </style>
 </head>
 
 <body>
-  <table id="optionsTable">
-    <tr>
-      <th>Artist name (must be exact)</th>
-      <th>URL of new image</th>
-      <th>Gradient color (for artist page)</th>
-    </tr>
-  </table>
+  <div class="header">
+      <img class="masthead-logo" src="icon_transparent.png">
+  </div>
 
-  <button id="save-button">Save</button>
-  <button id="add-row">Add row</button>
+  <div class="content">
+    <h1 class="content-top-header">Settings</h1>
+
+    <h2 class="form-header">Artist Images</h2>
+
+    <table id="optionsTable">
+      <tr>
+        <th>Artist name (must be exact)</th>
+        <th>URL of new image</th>
+        <th colspan=2>Gradient color</th>
+      </tr>
+    </table>
+
+    <button id="save-button" class="red">Save</button>
+    <button id="add-row">Add row</button>
+
+    <h2 class="form-header">Other Improvements</h2>
+    
+    <fieldset>
+      <legend>Recent Tracks</legend>
+      <div class="form-group">
+        <h3>Condense padding</h3>
+        <label for="show_recent_tracks_arwork">
+          <input type="checkbox" name="condense_padding">
+          Make the recent tracklist pack more tightly on the redesign
+        </label>
+      </div>
+    </fieldset>
+
+  </div>
 </body>
 <script src="options.js"></script>
 

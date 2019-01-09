@@ -20,8 +20,7 @@ I think this will be fixed eventually, but **I want it fixed now, damnit.** That
 
 ## Firefox?
 
-Not yet ):  
-Once we're at a point where the codebase is mostly stable then I'll look at porting it. Check out [this issue](https://github.com/jakeledoux/lastresort/issues/4).
+Sort of! Firefox support was added in v0.7, but it's still not working quite as well as the Chrome version.
 
 ## Can I help?
 
@@ -34,6 +33,15 @@ Absolutely! Refer to the [contribution guide](https://github.com/jakeledoux/last
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.7]
+### Added
+- Added option to condense padding on recent tracks (redesign only)
+- Firefox support
+### Changed
+- Browser action now disabled on domains other than Last.fm.
+- Extension now works when navigation using forward/back buttons (Chrome only).
+- Redesigned the options page to look like the Last.fm settings pages.
 
 ## [0.6]
 ### Added

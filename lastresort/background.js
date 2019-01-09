@@ -11,6 +11,10 @@ chrome.browserAction.onClicked.addListener(function (details) {
 
 chrome.webNavigation.onCommitted.addListener(function (details) {
   if (details.url.includes("last.fm")) {
+    chrome.browserAction.enable();
     chrome.tabs.executeScript(details.tabid, { file: "imgreplace.js" });
+  }
+  else {
+    chrome.browserAction.disable();
   }
 });
