@@ -20,8 +20,7 @@ I think this will be fixed eventually, but **I want it fixed now, damnit.** That
 
 ## Firefox?
 
-Not yet ):  
-Once we're at a point where the codebase is mostly stable then I'll look at porting it. Check out [this issue](https://github.com/jakeledoux/lastresort/issues/4).
+Sort of! Firefox support was added in v0.7, but it's still not working quite as well as the Chrome version.
 
 ## Can I help?
 
