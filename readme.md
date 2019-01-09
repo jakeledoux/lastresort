@@ -6,7 +6,7 @@ Created by [Jake Ledoux](https://jakeledoux.com). Contact: <dev@jakeledoux.com>
 
 ## How can I install this?
 
-You can find the extenion [here on the Chrome Web Store](https://chrome.google.com/webstore/detail/last-resort/afpofkgganekekgfenmgciebodcbkomh). It's unlisted for now, and will remain that way until v1.0. If you have problems, please create an issue here instead of leaving a negative review. It's in beta, so bugs and odd behaviour should be expected.
+You can find the extenion [here on the Chrome Web Store](https://chrome.google.com/webstore/detail/last-resort/afpofkgganekekgfenmgciebodcbkomh), or [here if you prefer Firefox](https://addons.mozilla.org/en-US/firefox/addon/last-resort/). It's unlisted for now, and will remain that way until v1.0. If you have problems, please create an issue here instead of leaving a negative review. It's in beta, so bugs and odd behaviour should be expected.
 
 ## Why does it exist?
 
