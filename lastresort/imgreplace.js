@@ -41,7 +41,7 @@ if (pageType == "user") {
         if (details.condense_padding) {
             WriteCSS(".chartlist-row { padding: 5px; }");
         }
-    })
+    });
 }
 
 function WriteCSS(css) {
