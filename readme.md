@@ -38,8 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.7]
 ### Added
 - Added option to condense padding on recent tracks (redesign only)
+- Firefox support
 ### Changed
 - Browser action now disabled on domains other than Last.fm.
+- Extension now works when navigation using forward/back buttons (Chrome only).
 - Redesigned the options page to look like the Last.fm settings pages.
 
 ## [0.6]
