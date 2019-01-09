@@ -11,8 +11,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.7]
+### Added
+- Added option to condense padding on recent tracks (redesign only)
 ### Changed
 - Browser action now disabled on domains other than Last.fm.
+- Redesigned the options page to look like the Last.fm settings pages.
 
 ## [0.6]
 ### Added
