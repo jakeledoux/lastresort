@@ -1,7 +1,9 @@
+> ⚠️ This extension has been abandoned. It may or may not still function so feel free to give it a try, but no further updates will be made.
+
 # Last Resort
 A browser extension that fixes annoying cosmetic Last.fm issues.
 
-Created by [Jake Ledoux](https://jakeledoux.com). Contact: <dev@jakeledoux.com>
+Created by [Jake Ledoux](https://jakeledoux.com). Contact: <contactjakeledoux@gmail.com>
 ***
 
 ## How can I install this?
